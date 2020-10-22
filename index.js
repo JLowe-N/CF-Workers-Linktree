@@ -1,4 +1,4 @@
-const workerDomain = 'https://worker.justinlowen.workers.dev'
+const workerDomain = 'https://linktree.justinlowen.workers.dev'
 
 
 addEventListener('fetch', event => {
@@ -56,7 +56,7 @@ class ElementHandler {
     }
 
     if (id === "avatar") {
-      element.setAttribute("src", "")
+      element.setAttribute("src", "https://raw.githubusercontent.com/JLowe-N/CF-Workers-Linktree/master/img/JLowen_avatar.png")
     }
 
   }
