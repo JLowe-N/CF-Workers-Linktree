@@ -71,7 +71,7 @@ class ElementHandler {
       // element.setAttribute("style", "background-image: url('https://unsplash.com/photos/Jqc2nOH3u3Y'); background-repeat: no-repeat; width: 100%; height: 100%;")
       let bodyStyle = `
       body {
-        background-image: url('https://unsplash.com/photos/Jqc2nOH3u3Y');
+        background-image: url('https://raw.githubusercontent.com/JLowe-N/CF-Workers-Linktree/master/img/dream-holidays-1511-1024.jpg');
       }
       `
       element.append(bodyStyle)
