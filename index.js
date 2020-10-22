@@ -15,7 +15,13 @@ async function handleRequest(request) {
     })
   } else {
     let request = await fetch('https://static-links-page.signalnerve.workers.dev')
-    response = new HTMLRewriter().on("div#links", new ElementHandler()).transform(request)
+
+    response = new HTMLRewriter()
+      .on("div#links", new ElementHandler())
+      .on("div#profile", new ElementHandler())
+      .on("img#avatar", new ElementHandler())
+      .on("h1#name", new ElementHandler())
+      .transform(request)
     response = await response.text()
     response = new Response(response, {
       headers: { "content-type": "text/html;charset=UTF-8", "status": 200 }
@@ -31,12 +37,30 @@ async function handleRequest(request) {
 
 class ElementHandler {
   element(element) {
-    let linkHtml = ''
-    testLinks.forEach(link => {
-      linkHtml += `<a href="${link.url}">${link.name}</a>`
-    })
-    element.setInnerContent(linkHtml, { html: true })
+    let id = element.getAttribute("id")
+
+    if (id === "links") {
+      let linkHtml = ''
+      testLinks.forEach(link => {
+        linkHtml += `<a href="${link.url}">${link.name}</a>`
+      })
+      element.setInnerContent(linkHtml, { html: true })
+    }
+
+    if (id === "profile") {
+      element.removeAttribute("style")
+    }
+
+    if (id === "name") {
+      element.setInnerContent("@JustinLowen")
+    }
+
+    if (id === "avatar") {
+      element.setAttribute("src", "")
+    }
+
   }
+
 }
 
 
