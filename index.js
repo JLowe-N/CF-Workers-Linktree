@@ -21,6 +21,9 @@ async function handleRequest(request) {
       .on("div#profile", new ElementHandler())
       .on("img#avatar", new ElementHandler())
       .on("h1#name", new ElementHandler())
+      .on("div#social", new ElementHandler())
+      .on("title", new ElementHandler())
+      .on("style", new ElementHandler())
       .transform(request)
     response = await response.text()
     response = new Response(response, {
@@ -57,6 +60,22 @@ class ElementHandler {
 
     if (id === "avatar") {
       element.setAttribute("src", "https://raw.githubusercontent.com/JLowe-N/CF-Workers-Linktree/master/img/JLowen_avatar.png")
+    }
+
+    if (id === "title") {
+      element.setInnerContent("@JustinLowen")
+    }
+
+    if (element.tagName === "style") {
+      // element.removeAttribute("class")
+      // element.setAttribute("style", "background-image: url('https://unsplash.com/photos/Jqc2nOH3u3Y'); background-repeat: no-repeat; width: 100%; height: 100%;")
+      let bodyStyle = `
+      body {
+        background-image: url('https://unsplash.com/photos/Jqc2nOH3u3Y');
+      }
+      `
+      element.append(bodyStyle)
+
     }
 
   }
