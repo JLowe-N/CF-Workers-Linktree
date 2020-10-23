@@ -10,7 +10,7 @@ async function handleRequest(request) {
   let response
 
   if (request.method === 'GET' & request.url === `${workerDomain}/links`) {
-    response = new Response(JSON.stringify(testLinks), {
+    response = new Response(JSON.stringify(storyLinks), {
       headers: { 'content-type': 'JSON' },
     })
   } else {
@@ -45,8 +45,12 @@ class ElementHandler {
 
     if (id === "links") {
       let linkHtml = ''
-      testLinks.forEach(link => {
-        linkHtml += `<a href="${link.url}">${link.name}</a>`
+      storyLinks.forEach(link => {
+        linkHtml += `
+        <a href="${link.url}">
+          ${link.name}
+        </a>
+        `
       })
       element.setInnerContent(linkHtml, { html: true })
     }
@@ -76,7 +80,11 @@ class ElementHandler {
         background-size: cover;
       }
 
-      #social a svg {
+      #social #links a {
+        position: relative;
+      }
+
+      #social #links a svg {
         width: 50%;
         height: 50%;
         position: absolute;
@@ -89,14 +97,11 @@ class ElementHandler {
           height: reset;
           width: reset;
           margin: 0 0.25rem;
-        }
-
-        #links a {
           padding: 0.75rem 1.5rem;
         }
       }
       `
-
+    
       element.append(bodyStyle)
     }
 
@@ -107,13 +112,19 @@ class ElementHandler {
     if (id === "social") {
       element.removeAttribute("style")
       element.setAttribute("class", "flex justify-evenly")
-      let socialLinksHtml = '<div id="links">'
+      let socialLinksHtml = `
+        <div id="links">
+      `
       socialLinks.forEach(link => {
         socialLinksHtml += `
-          <a href="${link.url}" style="position: relative;">${link.svg}</a>
+          <a href="${link.url}">
+            ${link.svg}
+          </a>
         `
       })
-      socialLinksHtml += '</div>'
+      socialLinksHtml += `
+        </div> <!-- /links -->
+      `
 
       element.append(socialLinksHtml, { html: true })
     }
@@ -124,7 +135,7 @@ class ElementHandler {
 
 
 
-let testLinks = [
+let storyLinks = [
   {
     "name": "Portfolio",
     "url": "https://JLowe-N.github.io"
