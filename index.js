@@ -30,9 +30,6 @@ async function handleRequest(request) {
     response = new Response(response, {
       headers: { "content-type": "text/html;charset=UTF-8", "status": 200 }
     })
-    console.log(response)
-
-
   }
 
   return response
