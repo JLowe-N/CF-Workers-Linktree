@@ -24,6 +24,7 @@ async function handleRequest(request) {
       .on("div#social", new ElementHandler())
       .on("title", new ElementHandler())
       .on("style", new ElementHandler())
+      .on("body", new ElementHandler())
       .transform(request)
     response = await response.text()
     response = new Response(response, {
@@ -84,7 +85,7 @@ class ElementHandler {
       }
 
       @media (max-width: 500px) {
-        #social a {
+        #social #links a {
           height: reset;
           width: reset;
           margin: 0 0.25rem;
@@ -99,17 +100,20 @@ class ElementHandler {
       element.append(bodyStyle)
     }
 
+    if (element.tagName === "body") {
+      element.setAttribute("class", "bg-green-900")
+    }
+
     if (id === "social") {
       element.removeAttribute("style")
-
-      let socialLinksHtml = ''
+      element.setAttribute("class", "flex justify-evenly")
+      let socialLinksHtml = '<div id="links">'
       socialLinks.forEach(link => {
         socialLinksHtml += `
-        <div id="links">
           <a href="${link.url}" style="position: relative;">${link.svg}</a>
-        </div>
         `
       })
+      socialLinksHtml += '</div>'
 
       element.append(socialLinksHtml, { html: true })
     }
