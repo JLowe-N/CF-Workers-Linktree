@@ -3,7 +3,6 @@
  */
 class SocialLinkTransformer {
     constructor(links) {
-        console.log("Social Links:", links)
         this.links = links
     }
 

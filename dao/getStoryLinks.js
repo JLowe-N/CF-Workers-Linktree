@@ -1,19 +1,31 @@
 /**
- * Makes a request to /links endpoint, simulating API call to remote resource
- * @returns {Promise<{name: string, url: string}[]>}
+ * Returns an array of links that represent stories of Linktree for /links endpoint
+ * @type {({name: string, url: string}[])}
  */
 
-const links = require('./getLinksEndpoint')
-
-async function getStoryLinks() {
-    // const jsonHeaderContentType = {
-    //     headers: { "content-type": "application/json" }
-    // }
-    // const url = "https://linktree.justinlowen.workers.dev/links"
-    // const response = await fetch(url, jsonHeaderContentType)
-    // console.log(await response.text())
-    // return JSON.stringify(await response.json())
-    return links
+function getLinksEndpoint() {
+    return [
+        {
+            "name": "Portfolio",
+            "url": "https://JLowe-N.github.io"
+        },
+        {
+            "name": "Project: React-based Netflix",
+            "url": "https://jlowen-netflix.netlify.app/"
+        },
+        {
+            "name": "Project: Front End UI - Beer Locator",
+            "url": "https://justin-lowen.herokuapp.com/punk-api-beer-app"
+        },
+        {
+            "name": "Download My Resume (PDF)",
+            "url": "https://github.com/JLowe-N/MyResume/raw/master/Justin%20Lowen%20-%20Software%20Engineer%20-%20Sept%202020%20-%20Public%20Copy.pdf"
+        },
+        {
+            "name": "Learn Something New: How To Brew",
+            "url": "http://www.howtobrew.com/"
+        }
+    ]
 }
 
-module.exports = getStoryLinks
+module.exports = getLinksEndpoint()

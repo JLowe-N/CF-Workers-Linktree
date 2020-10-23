@@ -3,7 +3,7 @@
  * @param request
  * @returns {Response} Array of link objects
  */
-const links = require('../dao/getLinksEndpoint')
+const links = require('../dao/getStoryLinks')
 
 function linksHandler(request) {
     const init = {

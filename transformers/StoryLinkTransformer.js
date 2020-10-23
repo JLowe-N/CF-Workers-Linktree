@@ -3,7 +3,6 @@
  */
 class StoryLinkTransformer {
     constructor(links) {
-        console.log(links)
         this.links = links
     }
 
@@ -13,7 +12,6 @@ class StoryLinkTransformer {
      * @returns {Promise<void>}
      */
     async element(element) {
-        console.log(this.links)
         let childElements = ''
         this.links.forEach(link => {
             childElements += `

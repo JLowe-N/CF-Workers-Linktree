@@ -5,10 +5,7 @@
  * endpoint which provides a Tailwind CSS template.
  */
 const socialLinks = require('../dao/getSocialLinks')
-const storyLinks = require('../dao/getLinksEndpoint')
-console.log(storyLinks)
-console.log(socialLinks)
-const getStoryLinks = require('../dao/getStoryLinks')
+const storyLinks = require('../dao/getStoryLinks')
 const getHtmlTemplate = require('../dao/getHtmlTemplate')
 const TitleTransformer = require('../transformers/TitleTransformer')
 const StyleTransformer = require('../transformers/StyleTransformer')
