@@ -11,7 +11,7 @@ async function handleRequest(request) {
 
   if (request.method === 'GET' & request.url === `${workerDomain}/links`) {
     response = new Response(JSON.stringify(storyLinks), {
-      headers: { 'content-type': 'JSON' },
+      headers: { 'content-type': 'application/json' },
     })
   } else {
     let request = await fetch('https://static-links-page.signalnerve.workers.dev')
@@ -101,7 +101,7 @@ class ElementHandler {
         }
       }
       `
-    
+
       element.append(bodyStyle)
     }
 
