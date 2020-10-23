@@ -82,7 +82,20 @@ class ElementHandler {
         top: 25%;
         left: 25%;
       }
+
+      @media (max-width: 500px) {
+        #social a {
+          height: reset;
+          width: reset;
+          margin: 0 0.25rem;
+        }
+
+        #links a {
+          padding: 0.75rem 1.5rem;
+        }
+      }
       `
+
       element.append(bodyStyle)
     }
 
