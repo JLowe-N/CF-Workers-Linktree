@@ -4,3 +4,4 @@ account_id = "b6ecd4895dc7421f2dd5b38942966bab"
 workers_dev = true
 route = ""
 zone_id = ""
+entry-point = "/src"
