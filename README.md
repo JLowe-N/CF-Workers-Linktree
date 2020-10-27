@@ -63,7 +63,7 @@ project.
     - HTMLRewriter class is used to add these links to the template
     - Additional changes to styles including avatar and name heading
     - Returns the transformed page from the worker
-    
+
 Note: It seems Workers in the same zone cannot call one another as discussed [here](https://community.cloudflare.com/t/issue-with-worker-to-worker-https-request/94472/6).
 This is a sensible restriction because a Worker calling another Worker in the same zone could
 create a vulnerability.
@@ -90,7 +90,7 @@ Justin Lowen:
 - [https://jlowe-n.github.io/](https://jlowe-n.github.io/)
 - [Justin.G.Lowen@gmail.com](mailto:Justin.G.Lowen@gmail.com)
 
-Project Link: [https://github.com/JLowe-N/Systems-Profiler](https://github.com/JLowe-N/Systems-Profiler)
+Project Link: [https://github.com/JLowe-N/Systems-Profiler](https://github.com/JLowe-N/CF-Workers-Linktree)
 
 ## Acknowledgements
 - [Cloudflare](https://www.cloudflare.com/)
