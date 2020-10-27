@@ -63,6 +63,7 @@ project.
     - HTMLRewriter class is used to add these links to the template
     - Additional changes to styles including avatar and name heading
     - Returns the transformed page from the worker
+    
 Note: It seems Workers in the same zone cannot call one another as discussed [here](https://community.cloudflare.com/t/issue-with-worker-to-worker-https-request/94472/6).
 This is a sensible restriction because a Worker calling another Worker in the same zone could
 create a vulnerability.
