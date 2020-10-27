@@ -58,11 +58,11 @@ project.
 1. Returns Links as a JSON Response when a GET request is made to [/links](https://linktree.justinlowen.workers.dev/links)
 
 2. Returns a [Linktree style page](https://linktree.justinlowen.workers.dev/justin) when a GET request is made to any other path.
-    a. Retrieves static HTML template from https://static-links-page.signalnerve.workers.dev
-    b. Uses the links provided at /links
-    c. HTMLRewriter class is used to add these links to the template
-    d. Additional changes to styles including avatar and name heading
-    e. Returns the transformed page from the worker
+    - Retrieves static HTML template from https://static-links-page.signalnerve.workers.dev
+    - Uses the links provided at /links
+    - HTMLRewriter class is used to add these links to the template
+    - Additional changes to styles including avatar and name heading
+    - Returns the transformed page from the worker
 Note: It seems Workers in the same zone cannot call one another as discussed [here](https://community.cloudflare.com/t/issue-with-worker-to-worker-https-request/94472/6).
 This is a sensible restriction because a Worker calling another Worker in the same zone could
 create a vulnerability.
@@ -71,9 +71,9 @@ Normally, we would be making a call to get the links from a remote resource,
 but for this example I used a variable internal to the worker to provide the links data.
 
 3. Extra Credit
-    a. Social Icons added
-    b. Title Field Updated
-    c. Update background
+    - Social Icons added
+    - Title Field Updated
+    - Update background
 The static HTML template provided uses CSS Tailwind.  Several classes had to be updated
 to accommodate the page style as well as the fallback background color. A background
 image was also added to further customize the page.
@@ -94,12 +94,3 @@ Project Link: [https://github.com/JLowe-N/Systems-Profiler](https://github.com/J
 ## Acknowledgements
 - [Cloudflare](https://www.cloudflare.com/)
 - [Cloudflare Workers](https://workers.cloudflare.com/)
-
-
-
-
-
-
-
-
-
