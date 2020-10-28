@@ -6,6 +6,14 @@
 function getLinksEndpoint() {
     return [
         {
+            "name": "Source Code: Cloudflare Worker Based Linktree",
+            "url": "https://github.com/JLowe-N/CF-Workers-Linktree"
+        },
+        {
+            "name": "Source Code: Golang Based Request Profiler",
+            "url": "https://github.com/JLowe-N/Systems-Profiler"
+        },
+        {
             "name": "Portfolio",
             "url": "https://JLowe-N.github.io"
         },
