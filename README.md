@@ -90,7 +90,7 @@ Justin Lowen:
 - [https://jlowe-n.github.io/](https://jlowe-n.github.io/)
 - [Justin.G.Lowen@gmail.com](mailto:Justin.G.Lowen@gmail.com)
 
-Project Link: [https://github.com/JLowe-N/Systems-Profiler](https://github.com/JLowe-N/CF-Workers-Linktree)
+Project Link: [https://github.com/JLowe-N/CF-Workers-Linktree](https://github.com/JLowe-N/CF-Workers-Linktree)
 
 ## Acknowledgements
 - [Cloudflare](https://www.cloudflare.com/)
